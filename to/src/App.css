@@ -10,7 +10,7 @@
     background: linear-gradient(
       90deg,
       rgb(186, 183, 209) 0%,
-      rgba(100, 115, 255, 1) 100%
+      rgb(119, 167, 152) 100%
     );
   }
   .todo-app {
@@ -144,4 +144,8 @@
   
   .edit-icon {
     color: #fff;
+  }
+
+  .deleteButton {
+    background-color: rgb(224, 0, 0);
   }

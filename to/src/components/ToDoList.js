@@ -63,6 +63,7 @@ const removeTodo=(id)=>{
    <SearchBar data={todos} 
     completeTodo={completeTodo}
     removeTodo={removeTodo}
+    updateTodo={updateTodo}
      />
    <ToDo 
    todos={todos}
@@ -71,6 +72,7 @@ const removeTodo=(id)=>{
    updateTodo={updateTodo}
    
    />
+  
  
 
 

@@ -3,9 +3,10 @@ import "./SearchBar.css";
 import SearchIcon from "@material-ui/icons/Search";
 import CloseIcon from "@material-ui/icons/Close";
 import {RiCloseCircleLine} from 'react-icons/ri'
-// import {TiEdit} from 'react-icons/ti'
+import {TiEdit} from 'react-icons/ti'
+import ToDoList from './ToDoList'
 
-function SearchBar({  data, completeTodo, removeTodo }) {
+function SearchBar({  data, completeTodo, removeTodo,updateTodo }) {
   const [filteredData, setFilteredData] = useState([]);
   const [wordEntered, setWordEntered] = useState("");
   
@@ -66,11 +67,11 @@ function SearchBar({  data, completeTodo, removeTodo }) {
                 <RiCloseCircleLine
                onClick={() => removeTodo(todo.id)}
                className='delete-icon'
-          />
-                  {/* <TiEdit
-                    onClick={() => setEdit({ id: todo.id, value: todo.text })}
+                />
+                  <TiEdit
+                    onClick={() =>updateTodo(todo.id)}
                     className='edit-icon'
-                  /> */}
+                  />
                 </div>
               </div>
             
