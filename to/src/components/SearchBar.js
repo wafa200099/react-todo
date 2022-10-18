@@ -4,7 +4,7 @@ import SearchIcon from "@material-ui/icons/Search";
 import CloseIcon from "@material-ui/icons/Close";
 import {RiCloseCircleLine} from 'react-icons/ri'
 import {TiEdit} from 'react-icons/ti'
-import ToDoList from './ToDoList'
+// import Modal from "./Modal";
 
 function SearchBar({  data, completeTodo, removeTodo,updateTodo }) {
   const [filteredData, setFilteredData] = useState([]);
@@ -63,16 +63,15 @@ function SearchBar({  data, completeTodo, removeTodo,updateTodo }) {
                   {todo.text}
                 </div>
                 <div className='icons'>
-             
-                <RiCloseCircleLine
-               onClick={() => removeTodo(todo.id)}
-               className='delete-icon'
-                />
-                  <TiEdit
-                    onClick={() =>updateTodo(todo.id)}
-                    className='edit-icon'
-                  />
-                </div>
+             <RiCloseCircleLine
+             onClick={() => removeTodo(todo.id)}
+            className='delete-icon'
+           />
+          <TiEdit
+             onClick={() =>updateTodo(todo.id)}
+            className='edit-icon'
+          />
+              </div>
               </div>
             
             );

@@ -2,7 +2,8 @@ import React,{useState} from 'react'
 import ToDoForm from './ToDoForm'
 import {RiCloseCircleLine} from 'react-icons/ri'
 import {TiEdit} from 'react-icons/ti'
-import Modal from "../Modal";
+import Modal from "./Modal";
+// import '../components/Modal.css'
 const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
     const [edit, setEdit] = useState({
       id: null,
@@ -10,7 +11,9 @@ const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
     });
     const [showModal, setShowModal] = useState(false);
     const toggleShowModal = () => {
+       
         setShowModal(!showModal);
+         console.log("hiiiiiiiiiiii there");
       };
     
     const submitUpdate = value => {
@@ -34,23 +37,9 @@ const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
           {todo.text}
         </div>
 
-        {showModal ? (
-          <Modal>
-            <h3>Are you sure Delete this Task</h3>
-            <div className="modalButton">
-              <button className="button" onClick={toggleShowModal}>
-                CANCEL
-              </button>
-              <button className="deleteButton"  onClick={() => removeTodo(todo.id)}>
-                DELETE
-              </button>
-            </div>
-          </Modal>
-        ) : null}
-
         <div className='icons'>
           <RiCloseCircleLine
-            onClick={() => removeTodo(todo.id)}
+            onClick={toggleShowModal}
             className='delete-icon'
           />
           <TiEdit
@@ -58,6 +47,22 @@ const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
             className='edit-icon'
           />
         </div>
+
+        {showModal ? (
+          <Modal>
+            <h3>Are you sure Delete this Task ?</h3>
+            <div className="modal-buttons">
+              <button className="cancle-button" onClick={toggleShowModal}>
+                CANCEL
+              </button>
+              <button className="delete-button"  onClick={() => removeTodo(todo.id)}>
+                DELETE
+              </button>
+            </div>
+          </Modal>
+        ) : null}
+
+  
       </div>
     ));
   };

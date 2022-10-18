@@ -39,6 +39,7 @@ const updateTodo = (todoId, newValue) => {
   };
 
 const removeTodo=(id)=>{
+  console.log("hiiiiiiiiiii");
     const afterRemove=todos.filter((todo)=>todo.id!==id)
     setTodos(afterRemove)
     
@@ -53,14 +54,11 @@ const removeTodo=(id)=>{
         });
         setTodos(updatedTodos);
       };
-
-
-
   return (
     <div>
-   
    <ToDoForm onSubmit={addToDo}/>
-   <SearchBar data={todos} 
+   <SearchBar
+    data={todos} 
     completeTodo={completeTodo}
     removeTodo={removeTodo}
     updateTodo={updateTodo}
@@ -69,14 +67,8 @@ const removeTodo=(id)=>{
    todos={todos}
    completeTodo={completeTodo}
    removeTodo={removeTodo}
-   updateTodo={updateTodo}
-   
+   updateTodo={updateTodo}  
    />
-  
- 
-
-
-
     </div>
   )
 }
